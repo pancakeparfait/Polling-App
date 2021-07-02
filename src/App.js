@@ -20,8 +20,8 @@ function App() {
           {/* <SignIn /> */}
           {/* <AdminSignUP /> */}
           {/* <AdminWelcomePage /> */}
-          {/* <UserWelcomePage /> */}
-          <CreatePollQuestions />
+          <UserWelcomePage />
+          {/* <CreatePollQuestions /> */}
         </div>
         
         <Switch>
