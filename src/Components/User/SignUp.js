@@ -24,7 +24,7 @@ class SignUp extends Component {
               Register
           </h4>
           <br />
-          <form>
+          <form className="abxyzeeezee">
           <FormGroup>
               <Input type="email" name="email" id="exampleEmail" placeholder="Name" className="mb-2" />
             </FormGroup>
