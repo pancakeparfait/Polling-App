@@ -19,8 +19,8 @@ function App() {
           {/* <SignUp /> */}
           {/* <SignIn /> */}
           {/* <AdminSignUP /> */}
-          {/* <AdminWelcomePage /> */}
-          <UserWelcomePage />
+          <AdminWelcomePage />
+          {/* <UserWelcomePage /> */}
           {/* <CreatePollQuestions /> */}
         </div>
         
