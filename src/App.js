@@ -18,8 +18,8 @@ function App() {
         <div>
           {/* <SignUp /> */}
           {/* <SignIn /> */}
-          {/* <AdminSignUP /> */}
-          <AdminWelcomePage />
+          <AdminSignUP />
+          {/* <AdminWelcomePage /> */}
           {/* <UserWelcomePage /> */}
           {/* <CreatePollQuestions /> */}
         </div>
