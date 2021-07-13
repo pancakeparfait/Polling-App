@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-class AdminWelcomePage extends Component {
+class AdminProfilePage extends Component {
     constructor(props) {
         super(props);
         this.state = { 
@@ -12,7 +12,7 @@ class AdminWelcomePage extends Component {
     render() { 
         return ( 
             <>
-            <h2 className="mb-5 welcome-title">Welcome Back, Admin</h2>
+            
             <h5 className="mb-5">What would you like to do?</h5>
             <h4>View <Link href="#">Current</Link> Poll</h4>
             <h4>View <Link href="#">Previous Poll</Link> Results</h4>
@@ -25,4 +25,4 @@ class AdminWelcomePage extends Component {
     }
 }
  
-export default AdminWelcomePage;
+export default AdminProfilePage;
