@@ -3,33 +3,36 @@ import { Route, Switch } from 'react-router-dom';
 import SignUp from '../src/Components/User/SignUp';
 import SignIn from './Components/User/SignIn';
 import AdminSignUP from './Components/User/AdminSignUp';
-import AdminWelcomePage from './Components/Polling/AdminWelcomePage';
-import UserWelcomePage from './Components/Polling/UserWelcomePage';
+import AdminProfilePage from './Components/Polling/AdminProfilePage';
+import UserProfilePage from './Components/Polling/UserProfilePage';
 import ViewCurrentPoll from './Components/Polling/ViewCurrentPoll';
 import CreatePollQuestions from './Components/Polling/CreatePollQuestions';
 
 function App() {
+  const currentYear = new Date().getFullYear();
   return (
-    <main className="container">
+    <main className="container text-center">
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
 
         <div>
           {/* <SignUp /> */}
-          <SignIn />
+          {/* <SignIn /> */}
           {/* <AdminSignUP /> */}
-          {/* <AdminWelcomePage /> */}
-          {/* <UserWelcomePage /> */}
+          {/* <AdminProfilePage /> */}
+          <UserProfilePage />
           {/* <CreatePollQuestions /> */}
         </div>
 
         <Switch>
-          <Route path="/signup" component={SignUp} />
-          <Route path="/signin" component={SignIn} />
-          <Route path="/adminSignUp" component={AdminSignUP} />
+        <Route path="/signup" component={SignUp} />
+        <Route path="/signin" component={SignIn} />
+        {/* <Route path="/adminSignUp" component={AdminSignUP} /> */}
         </Switch>
       </header>
-      <footer>{/* ICP COPYRIGHT {new Date().getfullYear()} */}</footer>
+      <footer>
+        ICP COPYRIGHT {currentYear}
+      </footer>
     </main>
   );
 }
