@@ -16,8 +16,8 @@ function App() {
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         
         <div>
-          {/* <SignUp /> */}
-          <SignIn />
+          <SignUp />
+          {/* <SignIn /> */}
           {/* <AdminSignUP /> */}
           {/* <AdminWelcomePage /> */}
           {/* <UserWelcomePage /> */}
