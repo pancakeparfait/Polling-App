@@ -36,15 +36,27 @@ function App() {
             {/* grab user's name using route parameters */}
             <AppRoute
               exact
-              path="userProfile/:name"
+              path="/userProfile/:name"
               component={UserProfilePage}
               layout={GuestLayout}
             />
             <AppRoute
               exact
-              path="adminProfile/:name"
+              path="/adminProfile/:name"
               component={AdminProfilePage}
               layout={GuestLayout}
+            />
+            <AppRoute
+              exact
+              path="/pollingQuestions"
+              component={ViewCurrentPoll}
+              layout={DefaultLayout}
+            />
+            <AppRoute
+              exact
+              path="/createPoll"
+              component={CreatePollQuestions}
+              layout={AdminLayout}
             />
             <AppRoute
               path="/notFound"
@@ -56,7 +68,6 @@ function App() {
           </Switch>
         </div>
       </header>
-      
     </main>
   );
 }

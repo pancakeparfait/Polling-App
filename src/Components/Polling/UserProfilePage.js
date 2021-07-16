@@ -29,4 +29,4 @@ class UserProfilePage extends Component {
   }
 }
 
-export default withAuth(UserProfilePage);
+export default (UserProfilePage);
