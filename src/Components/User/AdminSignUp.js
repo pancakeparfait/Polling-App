@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, FormGroup, Input, InputGroup, Label } from 'reactstrap';
+import {withAuth} from '../../Common/Utility'
 
 class AdminSignUP extends Component {
   constructor(props) {
@@ -68,4 +69,4 @@ class AdminSignUP extends Component {
   }
 }
 
-export default AdminSignUP;
+export default withAuth(AdminSignUP);

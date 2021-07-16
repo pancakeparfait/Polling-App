@@ -1,118 +1,132 @@
-import React, { Component } from 'react';
-import { Button, Col, FormGroup, Label, Input } from 'reactstrap';
-import { createAuthIdentity, getHomePage } from '../../Common/Utility';
+import React, { useState } from "react";
+import "./SignIn.css";
+import SignUp from "./SignUp";
+import { Button } from "reactstrap";
+import {
+  FaUserCircle,
+  FaLock,
+  FaFacebook,
+  FaGoogle,
+  FaLinkedinIn,
+  FaTwitter,
+} from "react-icons/fa";
+// import { createAuthIdentity, getHomePage } from "../../Common/Utility";
 
-class SignIn extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      signInData: {
-        email: '',
-        password: '',
-      },
+const SignIn = (props) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const url = "";
+
+    const body = {
+      username: username,
+      password: password,
     };
-  }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-
-    //   const API_URL = `${Base_API_URL}/user/login`
-
-    //     fetch(`${API_URL}`, {
-    //         method: 'POST',
-    //         body: JSON.stringify({
-    //             email: this.state.signInData.email,
-    //             password: this.state.signInData.password,
-    //         }),
-    //         headers: new Headers({
-
-    //             'Content-Type': 'application/json',
-    //         })
-    //     })
-
-    //     .then((result) => result.json())
-    //     .then((response) =>{
-    //         console.log(response);
-    //         const{ status, data } = response;
-    //         if (status = 200){
-    //             createAuthIdentity(data);
-    //             this.props.history.replace(getHomePage());
-    //         }
-
-    //     })
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    })
+      .then((r) => r.json())
+      .then((rObj) => props.updateToken(rObj.sessionToken, rObj.user.id));
   };
 
-  handleChange = (event) => {
-    const { currentTarget: targetElement } = event;
-    const value = targetElement.value;
-    const signInData = { ...this.state.signInData };
-    signInData[targetElement.name] = value;
-    this.setState({ signInData });
-  };
+  return (
+    <div className="mainDiv">
+      <header className="sub-title">Login</header>
+      <br />
+      <div>
+        <form className="signin">
+          {/* <h2>Register Form</h2> */}
 
-  render() {
-    const { signInData } = this.state;
-    return (
-      <React.Fragment>
-          <p className="text-center">
-          Polling App
-        </p>
-        <header className="sub-title">Sign In</header>
-        <br />
+          <div class="input-container">
+            <i class="fa fa-user icon">
+              {" "}
+              <FaUserCircle />
+            </i>
+            <input
+              class="input-field"
+              type="text"
+              placeholder="Username"
+              name="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
 
-        <div>
-          <form>
-            <Col>
-              <FormGroup>
-                <Input
-                  type="email"
-                  name="email"
-                  id="exampleEmail"
-                  placeholder="Email"
-                  value={this.state.signInData.email}
-                  className="mb-2"
-                />
-              </FormGroup>
-            </Col>
-            <Col>
-              <FormGroup>
-                <Input
-                  type="password"
-                  name="password"
-                  id="examplePassword"
-                  className="mb-2"
-                  placeholder="password"
-                  value={signInData.password}
-                />
-              </FormGroup>
-            </Col>
-            <Label check>
-              <Input
-                type="checkbox"
-                className="custom-control custom-checkbox mb-5"
-                id="checkbox-3"
-              />{' '}
-              <span className="small-text p-3">Remember me</span>
-            </Label>
-            <br />
+          <div class="input-container">
+            <i class="fa fa-key icon">
+              {" "}
+              <FaLock />
+            </i>
+            <input
+              class="input-field"
+              type="password"
+              placeholder="Password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
 
-            <div class="container">
-              <div class="row">
-                <div class="col text-center">
-                  <Button className="btn btn-default btn-lg btn-submit mb-2">Submit</Button>
-                  <br />
-                  <p>or</p>
-                  <Button block className="btn btn-default btn-lg btn-register">Register</Button>
+          <div className="flex-containerone">
+            <form className="checkbox">
+              <input type="checkbox" id="checkbox" name="checkbox" value="" />
+              <label for="checkbox"> Remember Me</label>
+              <span className="forgotPass">
+                <a href="#">FORGOT PASSWORD?</a>
+              </span>
+            </form>
+          </div>
+          <br />
+
+          <div class="container">
+            <div class="row">
+              <div class="col text-center">
+                <Button
+                  className="btn btn-default btn-lg btn-submit mb-2"
+                  type="submit"
+                  onClick={handleSubmit}
+                >
+                  Sign In
+                </Button>
+                <br />
+
+                {/* <hr/> */}
+                <p className="or">or</p>
+                <p className="signbtn">Sign In Using </p>
+                <span className="twittericon">
+                  <FaTwitter />
+                </span>
+                <span className="linkicon">
+                  <FaLinkedinIn />
+                </span>
+                <span className="facebookicon">
+                  <FaFacebook />
+                </span>
+                <span className="googleicon">
+                  <FaGoogle />
+                </span>
+                <div className="flex-container">
+                  <h6> Don't Have An Account? </h6>
+                  <Button className="accountLink" onClick = {handleSubmit}>
+                    {" "}
+                    Create Account
+                  </Button>
                 </div>
               </div>
             </div>
-
-            
-          </form>
-        </div>
-      </React.Fragment>
-    );
-  }
-}
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
 
 export default SignIn;
