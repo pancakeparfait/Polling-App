@@ -9,4 +9,4 @@ const ViewCurrentPoll = (props) => {
   );
 };
 
-export default withAuth(ViewCurrentPoll);
+export default ViewCurrentPoll;

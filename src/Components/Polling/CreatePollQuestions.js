@@ -23,4 +23,4 @@ class CreatePollQuestions extends Component {
   }
 }
 
-export default withAuth(CreatePollQuestions);
+export default (CreatePollQuestions);

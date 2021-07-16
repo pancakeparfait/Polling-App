@@ -3,14 +3,13 @@ import { Redirect } from 'react-router-dom';
 export const clearSession = () => localStorage.clear();
 
 export const withAuth = (Component) => {
-  return () => (<Component />);
-  // {
-  //   if (isLoggedIn()) {
-  //     return <Component />;
-  //   } else {
-  //     return <Redirect to="/signin" />;
-  //   }
-  // };
+  return () => {
+    if (isLoggedIn()) {
+      return <Component />;
+    } else {
+      <Redirect to="/signin" />;
+    }
+  };
 };
 
 export const SignInUser = ({ history }) => {
