@@ -15,17 +15,19 @@ import {
 const SignUp = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [username, setUsername] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const baseUrl = `/api/Account/Register`;
+    const baseUrl = `d/api/Account/Register`;
 
     const body = {
       username: username,
       email: email,
       password: password,
+      confirmPassword : confirmPassword
     };
 
     fetch(baseUrl, {
@@ -40,7 +42,7 @@ const SignUp = (props) => {
   };
   return (
     <div className="mainDiv">
-    <header className="sub-title">SignUp</header>
+    <header className="sub-title">Create Account</header>
     <br />
     <div>
       <form className="signup">
@@ -88,6 +90,32 @@ const SignUp = (props) => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
+
+      <div class="input-container">
+        <i class="fa fa-key icon">
+          {" "}
+          <FaLock />
+        </i>
+        <input
+          class="input-field"
+          type="password"
+          placeholder="Confirm Password"
+          name="password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+        />
+      </div>
+      <div className = "input-containerone">
+        <p className = "admintext"> Enter 4 Digit Admin PIN </p>
+        <input
+        type = "text"
+        class= "pin"
+        name= "pin"
+        maxLength= "4"
+        size= "4"
+        value = ""
+        />
+        </div>
       <div class="container">
         <div class="row">
           <div class="col text-center">
@@ -96,12 +124,14 @@ const SignUp = (props) => {
               type="submit"
               onClick={handleSubmit}
             >
-              Sign In
+              Sign Up
             </Button>
             <br />
-
-            {/* <hr/> */}
+            <div className = "flex-containertwo">
+              <div className = "lines">
             <p className="or">or</p>
+            </div>
+            </div>
             <p className="signbtn">Sign Up Using </p>
             <span className="twittericon">
               <FaTwitter />
@@ -119,7 +149,7 @@ const SignUp = (props) => {
               <h6> Already Have An Account? </h6>
               <Button className="accountLink" onClick={handleSubmit}>
                 {" "}
-                Create Account
+                Login Here
               </Button>
             </div>
           </div>

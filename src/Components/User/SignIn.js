@@ -97,9 +97,11 @@ const SignIn = (props) => {
                   Sign In
                 </Button>
                 <br />
-
-                {/* <hr/> */}
+                <div className = "flex-containertwo">
+                  <div className = "lines">
                 <p className="or">or</p>
+                </div>
+                </div>
                 <p className="signbtn">Sign In Using </p>
                 <span className="twittericon">
                   <FaTwitter />
