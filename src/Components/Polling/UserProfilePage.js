@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import {withAuth} from '../../Common/Utility'
 
 class UserProfilePage extends Component {
   constructor(props) {
@@ -11,14 +12,11 @@ class UserProfilePage extends Component {
       <div>
         <h2 className="mb-5 welcome-title">Welcome Back, Nick</h2>
 
-        <input class="input" type="text" placeholder="Department" />
-        <div class="buttons">
-          <button class="button is-primary">Primary</button>
+        <input className="input" type="text" placeholder="Department" />
+        
+          <button className="button is-info mt-1">Save</button>
           
-        </div>
-        {/* <p> </p>
-            <p> </p> */}
-
+        
         <h4>
           {' '}
           <Link href="#">Current</Link> Poll
@@ -31,4 +29,4 @@ class UserProfilePage extends Component {
   }
 }
 
-export default UserProfilePage;
+export default withAuth(UserProfilePage);

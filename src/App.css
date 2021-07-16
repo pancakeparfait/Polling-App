@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: white;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,6 +74,6 @@ Button.btn-register {
   padding-bottom: 50px;
 }
 
-/* main.container {
-  height: 100vh;
-} */
+main.container {
+  height: 90vh;
+}
