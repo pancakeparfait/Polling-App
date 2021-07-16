@@ -1,8 +1,7 @@
 import './App.css';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Switch } from 'react-router-dom';
 import SignUp from '../src/Components/User/SignUp';
 import SignIn from './Components/User/SignIn';
-import AdminSignUP from './Components/User/AdminSignUp';
 import AdminProfilePage from './Components/Polling/AdminProfilePage';
 import UserProfilePage from './Components/Polling/UserProfilePage';
 import ViewCurrentPoll from './Components/Polling/ViewCurrentPoll';
