@@ -99,7 +99,7 @@ const SignUp = (props) => {
         <input
           class="input-field"
           type="password"
-          placeholder="Verify Password"
+          placeholder="Confirm Password"
           name="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
