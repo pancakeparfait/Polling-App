@@ -1,0 +1,89 @@
+
+
+button.btn.btn-default.btn-lg.btn-submit.mb-2.btn-secondary{
+    background-color: #0AA7DB;
+    border: none;
+}
+
+* {box-sizing: border-box;}
+
+
+.input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+
+.icon {
+  padding: 2px;
+  background: lightgray;
+  color: black;
+  min-width: 50px;
+  text-align: center;
+
+}
+
+
+.input-field {
+  width: 100%;
+  padding: 2px;
+  outline: none;
+  background-color: lightgray;
+  border: none;
+  
+}
+
+.input-field:focus {
+  border: 2px solid #0AA7DB;
+}
+
+.sub-title{
+  font-weight: bold;
+}
+
+.flex-containerone{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content:flex-start;
+  position: relative;
+  top: 5px;
+  left: 1rem;
+
+}
+
+.twittericon{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.facebookicon{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.linkicon, .googleicon, .facebookicon, .twittericon  {
+  font-size: 2rem;
+  color:  #4285F4;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  position: relative;
+  top: 30px;
+}
+
+button.accountLink.btn.btn-secondary {
+  position: relative;
+  top: -3px;
+  left: 10px;
+  padding: 0px 0px;
+  font-size: 16px;
+  font-weight: bold;
+  border:none;
+  background-color: white;
+  color: darkblue;
+
+}

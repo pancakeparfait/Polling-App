@@ -7,8 +7,6 @@ import AdminProfilePage from './Components/Polling/AdminProfilePage';
 import UserProfilePage from './Components/Polling/UserProfilePage';
 import ViewCurrentPoll from './Components/Polling/ViewCurrentPoll';
 import CreatePollQuestions from './Components/Polling/CreatePollQuestions';
-import LogOut from './Components/User/LogOut';
-import Footer from './Components/Footer';
 import { getHomePage, getIsAdmin } from './Common/Utility';
 import AdminLayout from './Layouts/Admin/AdminLayout';
 import GuestLayout from './Layouts/Guest/GuestLayout';
@@ -57,7 +55,6 @@ function App() {
             <Redirect from="/" exact to={getHomePage()} />
             <Redirect to="/notFound" />
           </Switch>
-          <LogOut />
         </div>
       </header>
       
