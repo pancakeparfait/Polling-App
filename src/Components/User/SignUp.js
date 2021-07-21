@@ -1,4 +1,3 @@
-import SignIn from "./SignIn";
 import "./Signup.css"
 import React, { useState } from "react";
 import { Button } from "reactstrap";
@@ -41,18 +40,20 @@ const SignUp = (props) => {
       .then((rObj) => props.updateToken(rObj.sessionToken, rObj.user.id));
   };
   return (
-    <div className="mainDiv">
-    <header className="sub-title">Create Account</header>
+
+    <div className="mainDiv App-header">
+    <header className="sub-title">SignUp</header>
+
     <br />
     <div>
       <form className="signup">
-      <div class="input-container">
-        <i class="fa fa-user icon">
+      <div className="input-container">
+        <i className="fa fa-user icon">
           {" "}
           <FaUserCircle />
         </i>
         <input
-          class="input-field"
+          className="input-field"
           type="text"
           placeholder="Username"
           name="username"
@@ -61,13 +62,13 @@ const SignUp = (props) => {
         />
       </div>
 
-      <div class="input-container">
-        <i class="fa fa-envelope icon">
+      <div className="input-container">
+        <i className="fa fa-envelope icon">
           {" "}
           <FaEnvelope />
         </i>
         <input
-          class="input-field"
+          className="input-field"
           type="text"
           placeholder="Email"
           name="email"
@@ -76,13 +77,13 @@ const SignUp = (props) => {
         />
       </div>
 
-      <div class="input-container">
-        <i class="fa fa-key icon">
+      <div className="input-container">
+        <i className="fa fa-key icon">
           {" "}
           <FaLock />
         </i>
         <input
-          class="input-field"
+          className="input-field"
           type="password"
           placeholder="Password"
           name="password"
@@ -90,6 +91,11 @@ const SignUp = (props) => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
+
+      <div className="container">
+        <div className="row">
+          <div className="col text-center">
+
 
       <div class="input-container">
         <i class="fa fa-key icon">
@@ -119,6 +125,7 @@ const SignUp = (props) => {
       <div class="container">
         <div class="row">
           <div class="col text-center">
+
             <Button
               className="btn btn-default btn-lg btn-submit mb-2"
               type="submit"
