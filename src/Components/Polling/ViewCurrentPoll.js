@@ -1,5 +1,4 @@
 import React from 'react';
-import { withAuth } from '../../Common/Utility';
 
 const ViewCurrentPoll = (props) => {
   return (

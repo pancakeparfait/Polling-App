@@ -2,11 +2,11 @@ import './App.css';
 import { Redirect, Switch } from 'react-router-dom';
 import SignUp from '../src/Components/User/SignUp';
 import SignIn from './Components/User/SignIn';
-import AdminProfilePage from './Components/Polling/AdminProfilePage';
+import AdminWelcomePage from './Components/Polling/AdminWelcomePage';
 import UserProfilePage from './Components/Polling/UserProfilePage';
 import ViewCurrentPoll from './Components/Polling/ViewCurrentPoll';
 import CreatePollQuestions from './Components/Polling/CreatePollQuestions';
-import { getHomePage, getIsAdmin } from './Common/Utility';
+import { getHomePage, getIsAdmin, isLoggedIn } from './Common/Utility';
 import AdminLayout from './Layouts/Admin/AdminLayout';
 import GuestLayout from './Layouts/Guest/GuestLayout';
 import DefaultLayout from './Layouts/Default/DefaultLayout';
@@ -14,11 +14,10 @@ import NotFound from './Common/NotFound';
 import AppRoute from './Layouts/AppRoute';
 
 function App() {
-  const getUserLayout = () => (getIsAdmin() ? AdminLayout : DefaultLayout);
+  const getUserLayout = () => (!isLoggedIn() ? GuestLayout: getIsAdmin() ? AdminLayout : DefaultLayout);
 
   return (
     <main className="container text-center">
-      <header className="App-header">
         <div>
           <Switch>
             <AppRoute
@@ -42,8 +41,8 @@ function App() {
             />
             <AppRoute
               exact
-              path="/adminProfile/:name"
-              component={AdminProfilePage}
+              path="/adminWelcomePage/:name"
+              component={AdminWelcomePage}
               layout={GuestLayout}
             />
             <AppRoute
@@ -67,7 +66,6 @@ function App() {
             <Redirect to="/notFound" />
           </Switch>
         </div>
-      </header>
     </main>
   );
 }
