@@ -92,9 +92,7 @@ const SignUp = (props) => {
         />
       </div>
 
-      <div className="container">
-        <div className="row">
-          <div className="col text-center">
+
 
 
       <div class="input-container">
@@ -162,6 +160,7 @@ const SignUp = (props) => {
           </div>
         </div>
       </div>
+   
     </form>
     </div>
     </div>

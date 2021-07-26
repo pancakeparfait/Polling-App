@@ -75,13 +75,13 @@ const SignIn = (props) => {
           </div>
 
           <div className="flex-containerone">
-            <form className="checkbox">
+            <div className="checkbox">
               <input type="checkbox" id="checkbox" name="checkbox" value="" />
-              <label for="checkbox"> Remember Me</label>
+              <label htmlFor="checkbox"> Remember Me</label>
               <span className="forgotPass">
                 <a href="#">FORGOT PASSWORD?</a>
               </span>
-            </form>
+            </div>
           </div>
           <br />
 
